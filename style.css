@@ -6,8 +6,44 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+
+  /* size */
+  --size-button: 60px;
 }
 
-* {
-  box-sizing: border-box;
+
+body {
+  height: 100vh;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.btn:hover,
+.logo:hover{
+  transform: scale(1.1);
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.imageBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+ul {
+  list-style-type: none;
 }
