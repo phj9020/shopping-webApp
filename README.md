@@ -1,3 +1,3 @@
 # shopping-webApp
 
-Clonging Shopping webApp page
+Cloning Shopping webApp page
