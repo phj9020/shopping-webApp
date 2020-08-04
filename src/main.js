@@ -1,3 +1,5 @@
+
+
 // Fetch the item from the JSON file
 function loadItems() {
   return fetch("data/data.json")
@@ -29,9 +31,9 @@ function onButtonClick(event, items){
     if (key === null || value === null ){
         return;
     }
-
+    
+    // updateItems(items, key, value);
     const filtered = items.filter(item => item[key] === value);
-    console.log(filtered);
     displayItems(filtered);
 }
 
