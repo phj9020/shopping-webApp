@@ -9,7 +9,6 @@ function loadItems() {
 function displayItems(items) {
   const containter = document.querySelector(".items");
   containter.innerHTML = items.map((item) => createHTMLString(item)).join(''); // json item 을 html 요소롤 변환  & 문자열이 들어있는 배열을 하나로 병합 join('');
-  
 }
 
 
@@ -22,8 +21,26 @@ function createHTMLString(item) {
   </li>`;
 }
 
-function setEventListeners(){
-    
+function onButtonClick(event, items){
+    const dataset = event.target.dataset;
+    const key = dataset.key;
+    const value = dataset.value;
+    // buttons 컨테이너 안에 key, value 값이 존재하지 않다면 아무 것도 return 하지 않는다
+    if (key === null || value === null ){
+        return;
+    }
+
+    const filtered = items.filter(item => item[key] === value);
+    console.log(filtered);
+    displayItems(filtered);
+}
+
+//이벤트 위임
+function setEventListeners(items){
+    const logo = document.querySelector('.logo');
+    const button = document.querySelector('.buttons');
+    logo.addEventListener("click", () => displayItems(items));
+    button.addEventListener("click", (event) => onButtonClick(event, items));
 }
 
 // main 아이템을 동적으로 받아온다
