@@ -9,8 +9,14 @@
 
   /* size */
   --size-button: 60px;
-}
+  --size-font: 18px;
+  --size-border: 4px;
+  --size-thumnail: 50px;
+  --base-space : 8px;
 
+  /*animation*/
+  --animation-duration: 300ms;
+}
 
 body {
   height: 100vh;
@@ -18,17 +24,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
-.logo{
+
+.logo {
   cursor: pointer;
-  transition: transform 300ms ease;
-}
+  transition: transform var(--animation-duration) ease;
+} 
 
 .btn:hover,
-.logo:hover{
+.logo:hover {
   transform: scale(1.1);
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .btn {
@@ -36,7 +49,8 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  transition: transform 300ms ease;
+  transition: transform var(--animation-duration) ease;
+  margin-right: var(--base-space);
 }
 
 .imageBtn {
@@ -44,6 +58,52 @@ body {
   height: var(--size-button);
 }
 
-ul {
-  list-style-type: none;
+.colorBtn {
+  font-size: var(--size-font);
+  padding: calc(var(--base-space)*2);
+  border-radius: var(--size-border);
+}
+
+.blue {
+  background-color: var(--color-blue);
+
+}
+
+.yellow{
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  background-color: var(--color-pink);
+}
+
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+  overflow-y: scroll;
+}
+
+/* scrollbar 숨기기  */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+}
+
+.item__thumbnail {
+  width: var(--size-thumnail);
+}
+
+.item__description {
+  margin-left: var(--base-space);
+  font-size: var(--size-font);
 }
