@@ -9,6 +9,7 @@ function loadItems() {
 function displayItems(items) {
   const containter = document.querySelector(".items");
   containter.innerHTML = items.map((item) => createHTMLString(item)).join(''); // json item 을 html 요소롤 변환  & 문자열이 들어있는 배열을 하나로 병합 join('');
+  
 }
 
 
@@ -21,11 +22,12 @@ function createHTMLString(item) {
   </li>`;
 }
 
-function setEventListeners(items){
-
+function setEventListeners(){
+    
 }
 
 // main 아이템을 동적으로 받아온다
+function init(){
 loadItems()
   .then((items) => {
     // 성공적으로 받아왔을 시 // promise
@@ -33,3 +35,6 @@ loadItems()
     setEventListeners(items);
   })
   .catch(console.log);
+}
+
+init();
