@@ -33,7 +33,7 @@ function onButtonClick(event, items){
     }
     
     // updateItems(items, key, value);
-    const filtered = items.filter(item => item[key] === value);
+    const filtered = items.filter((item) => item[key] === value);
     displayItems(filtered);
 }
 
@@ -57,3 +57,5 @@ loadItems()
 }
 
 init();
+
+
